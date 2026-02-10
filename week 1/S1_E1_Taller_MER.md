@@ -108,7 +108,7 @@ Aquí es donde aprenden a pensar. Haz estas preguntas:
 
 ### Paso 4: El Dibujo Final (Solución Visual)
 
-![Diagrama Entidad Relación de Ejemplo](images/image_EMR_eats.jpg)
+![Diagrama Entidad Relación de Ejemplo](../images/image_EMR_eats.jpg)
 
 ```text
 [ Usuario ] ---||---------------|< [ Pedido ]
