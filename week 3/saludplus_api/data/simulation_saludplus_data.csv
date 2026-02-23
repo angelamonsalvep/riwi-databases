@@ -1,0 +1,101 @@
+appointment_id,appointment_date,patient_name,patient_email,patient_phone,patient_address,doctor_name,doctor_email,specialty,treatment_code,treatment_description,treatment_cost,insurance_provider,coverage_percentage,amount_paid
+APT-1001,2024-01-07,Valeria Gomez,valeria.g@mail.com,3005555555,Cra 12 #45-67,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-007,Skin Treatment,200000,ProteccionMedica,60,80000.0
+APT-1002,2024-01-14,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-006,Physical Therapy Session,150000,ProteccionMedica,60,60000.0
+APT-1003,2024-04-19,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-003,X-Ray,250000,ProteccionMedica,60,100000.0
+APT-1004,2024-03-12,Daniel Castro,daniel.c@mail.com,3006666666,Av 3 #22-44,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-003,X-Ray,250000,SaludTotal,80,50000.0
+APT-1005,2024-04-25,Laura Medina,laura.m@mail.com,3007777777,Calle 50 #10-11,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-007,Skin Treatment,200000,SaludTotal,80,40000.0
+APT-1006,2024-01-01,Daniel Castro,daniel.c@mail.com,3006666666,Av 3 #22-44,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-002,Specialist Consultation,180000,SaludTotal,80,36000.0
+APT-1007,2024-01-12,Camila Rojas,camila.r@mail.com,3003333333,Av 5 #33-21,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-001,General Consultation,120000,ProteccionMedica,60,48000.0
+APT-1008,2024-04-26,Laura Medina,laura.m@mail.com,3007777777,Calle 50 #10-11,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-008,Cardiac Evaluation,300000,ProteccionMedica,60,120000.0
+APT-1009,2024-03-01,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-006,Physical Therapy Session,150000,SinSeguro,0,150000.0
+APT-1010,2024-01-27,Mateo Diaz,mateo.d@mail.com,3010000000,Calle 90 #12-34,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-006,Physical Therapy Session,150000,SaludTotal,80,30000.0
+APT-1011,2024-02-20,Paula Herrera,paula.h@mail.com,3009999999,Av 68 #23-45,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-008,Cardiac Evaluation,300000,SinSeguro,0,300000.0
+APT-1012,2024-02-17,Paula Herrera,paula.h@mail.com,3009999999,Av 68 #23-45,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-003,X-Ray,250000,SaludTotal,80,50000.0
+APT-1013,2024-04-26,Santiago Vega,santiago.v@mail.com,3008888888,Cra 7 #45-12,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-003,X-Ray,250000,ProteccionMedica,60,100000.0
+APT-1014,2024-02-13,Paula Herrera,paula.h@mail.com,3009999999,Av 68 #23-45,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-002,Specialist Consultation,180000,SinSeguro,0,180000.0
+APT-1015,2024-02-19,Mateo Diaz,mateo.d@mail.com,3010000000,Calle 90 #12-34,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-001,General Consultation,120000,VidaPlus,70,36000.0
+APT-1016,2024-03-16,Luis Martinez,luis.m@mail.com,3002222222,Cra 15 #40-12,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-001,General Consultation,120000,ProteccionMedica,60,48000.0
+APT-1017,2024-01-30,Laura Medina,laura.m@mail.com,3007777777,Calle 50 #10-11,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-001,General Consultation,120000,ProteccionMedica,60,48000.0
+APT-1018,2024-03-04,Jorge Ramirez,jorge.r@mail.com,3004444444,Calle 8 #14-77,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-008,Cardiac Evaluation,300000,VidaPlus,70,90000.0
+APT-1019,2024-01-20,Paula Herrera,paula.h@mail.com,3009999999,Av 68 #23-45,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-007,Skin Treatment,200000,SinSeguro,0,200000.0
+APT-1020,2024-01-06,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-008,Cardiac Evaluation,300000,VidaPlus,70,90000.0
+APT-1021,2024-01-03,Valeria Gomez,valeria.g@mail.com,3005555555,Cra 12 #45-67,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-005,Blood Test,90000,SinSeguro,0,90000.0
+APT-1022,2024-03-22,Laura Medina,laura.m@mail.com,3007777777,Calle 50 #10-11,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-002,Specialist Consultation,180000,SaludTotal,80,36000.0
+APT-1023,2024-03-06,Daniel Castro,daniel.c@mail.com,3006666666,Av 3 #22-44,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-002,Specialist Consultation,180000,SinSeguro,0,180000.0
+APT-1024,2024-04-24,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-007,Skin Treatment,200000,SaludTotal,80,40000.0
+APT-1025,2024-03-10,Laura Medina,laura.m@mail.com,3007777777,Calle 50 #10-11,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-006,Physical Therapy Session,150000,ProteccionMedica,60,60000.0
+APT-1026,2024-03-01,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-006,Physical Therapy Session,150000,SinSeguro,0,150000.0
+APT-1027,2024-02-14,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-007,Skin Treatment,200000,SaludTotal,80,40000.0
+APT-1028,2024-04-01,Camila Rojas,camila.r@mail.com,3003333333,Av 5 #33-21,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-004,MRI Scan,850000,SaludTotal,80,170000.0
+APT-1029,2024-04-15,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-007,Skin Treatment,200000,ProteccionMedica,60,80000.0
+APT-1030,2024-01-19,Valeria Gomez,valeria.g@mail.com,3005555555,Cra 12 #45-67,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-006,Physical Therapy Session,150000,VidaPlus,70,45000.0
+APT-1031,2024-03-09,Daniel Castro,daniel.c@mail.com,3006666666,Av 3 #22-44,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-002,Specialist Consultation,180000,VidaPlus,70,54000.000000000015
+APT-1032,2024-04-12,Mateo Diaz,mateo.d@mail.com,3010000000,Calle 90 #12-34,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-007,Skin Treatment,200000,SaludTotal,80,40000.0
+APT-1033,2024-04-04,Camila Rojas,camila.r@mail.com,3003333333,Av 5 #33-21,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-001,General Consultation,120000,ProteccionMedica,60,48000.0
+APT-1034,2024-02-27,Santiago Vega,santiago.v@mail.com,3008888888,Cra 7 #45-12,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-007,Skin Treatment,200000,SaludTotal,80,40000.0
+APT-1035,2024-01-21,Paula Herrera,paula.h@mail.com,3009999999,Av 68 #23-45,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-003,X-Ray,250000,ProteccionMedica,60,100000.0
+APT-1036,2024-03-05,Luis Martinez,luis.m@mail.com,3002222222,Cra 15 #40-12,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-006,Physical Therapy Session,150000,VidaPlus,70,45000.0
+APT-1037,2024-04-24,Mateo Diaz,mateo.d@mail.com,3010000000,Calle 90 #12-34,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-002,Specialist Consultation,180000,ProteccionMedica,60,72000.0
+APT-1038,2024-04-29,Paula Herrera,paula.h@mail.com,3009999999,Av 68 #23-45,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-004,MRI Scan,850000,ProteccionMedica,60,340000.0
+APT-1039,2024-02-03,Laura Medina,laura.m@mail.com,3007777777,Calle 50 #10-11,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-002,Specialist Consultation,180000,VidaPlus,70,54000.000000000015
+APT-1040,2024-03-05,Jorge Ramirez,jorge.r@mail.com,3004444444,Calle 8 #14-77,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-004,MRI Scan,850000,ProteccionMedica,60,340000.0
+APT-1041,2024-03-13,Jorge Ramirez,jorge.r@mail.com,3004444444,Calle 8 #14-77,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-006,Physical Therapy Session,150000,SaludTotal,80,30000.0
+APT-1042,2024-02-13,Paula Herrera,paula.h@mail.com,3009999999,Av 68 #23-45,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-003,X-Ray,250000,VidaPlus,70,75000.0
+APT-1043,2024-04-10,Santiago Vega,santiago.v@mail.com,3008888888,Cra 7 #45-12,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-007,Skin Treatment,200000,SaludTotal,80,40000.0
+APT-1044,2024-02-02,Mateo Diaz,mateo.d@mail.com,3010000000,Calle 90 #12-34,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-006,Physical Therapy Session,150000,SinSeguro,0,150000.0
+APT-1045,2024-04-27,Jorge Ramirez,jorge.r@mail.com,3004444444,Calle 8 #14-77,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-003,X-Ray,250000,SaludTotal,80,50000.0
+APT-1046,2024-04-24,Mateo Diaz,mateo.d@mail.com,3010000000,Calle 90 #12-34,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-008,Cardiac Evaluation,300000,ProteccionMedica,60,120000.0
+APT-1047,2024-03-30,Mateo Diaz,mateo.d@mail.com,3010000000,Calle 90 #12-34,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-001,General Consultation,120000,ProteccionMedica,60,48000.0
+APT-1048,2024-04-20,Santiago Vega,santiago.v@mail.com,3008888888,Cra 7 #45-12,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-007,Skin Treatment,200000,ProteccionMedica,60,80000.0
+APT-1049,2024-02-15,Jorge Ramirez,jorge.r@mail.com,3004444444,Calle 8 #14-77,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-006,Physical Therapy Session,150000,VidaPlus,70,45000.0
+APT-1050,2024-04-15,Camila Rojas,camila.r@mail.com,3003333333,Av 5 #33-21,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-001,General Consultation,120000,SinSeguro,0,120000.0
+APT-1051,2024-02-18,Paula Herrera,paula.h@mail.com,3009999999,Av 68 #23-45,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-003,X-Ray,250000,SinSeguro,0,250000.0
+APT-1052,2024-02-17,Luis Martinez,luis.m@mail.com,3002222222,Cra 15 #40-12,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-002,Specialist Consultation,180000,ProteccionMedica,60,72000.0
+APT-1053,2024-03-05,Mateo Diaz,mateo.d@mail.com,3010000000,Calle 90 #12-34,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-001,General Consultation,120000,SinSeguro,0,120000.0
+APT-1054,2024-01-07,Mateo Diaz,mateo.d@mail.com,3010000000,Calle 90 #12-34,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-005,Blood Test,90000,SaludTotal,80,18000.0
+APT-1055,2024-02-29,Mateo Diaz,mateo.d@mail.com,3010000000,Calle 90 #12-34,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-004,MRI Scan,850000,SinSeguro,0,850000.0
+APT-1056,2024-02-04,Santiago Vega,santiago.v@mail.com,3008888888,Cra 7 #45-12,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-006,Physical Therapy Session,150000,VidaPlus,70,45000.0
+APT-1057,2024-03-29,Santiago Vega,santiago.v@mail.com,3008888888,Cra 7 #45-12,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-005,Blood Test,90000,ProteccionMedica,60,36000.0
+APT-1058,2024-01-07,Camila Rojas,camila.r@mail.com,3003333333,Av 5 #33-21,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-001,General Consultation,120000,SinSeguro,0,120000.0
+APT-1059,2024-03-25,Santiago Vega,santiago.v@mail.com,3008888888,Cra 7 #45-12,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-008,Cardiac Evaluation,300000,SaludTotal,80,60000.0
+APT-1060,2024-03-01,Paula Herrera,paula.h@mail.com,3009999999,Av 68 #23-45,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-006,Physical Therapy Session,150000,ProteccionMedica,60,60000.0
+APT-1061,2024-04-24,Jorge Ramirez,jorge.r@mail.com,3004444444,Calle 8 #14-77,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-001,General Consultation,120000,SinSeguro,0,120000.0
+APT-1062,2024-03-05,Mateo Diaz,mateo.d@mail.com,3010000000,Calle 90 #12-34,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-001,General Consultation,120000,ProteccionMedica,60,48000.0
+APT-1063,2024-04-03,Laura Medina,laura.m@mail.com,3007777777,Calle 50 #10-11,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-002,Specialist Consultation,180000,ProteccionMedica,60,72000.0
+APT-1064,2024-02-06,Camila Rojas,camila.r@mail.com,3003333333,Av 5 #33-21,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-006,Physical Therapy Session,150000,SinSeguro,0,150000.0
+APT-1065,2024-01-06,Mateo Diaz,mateo.d@mail.com,3010000000,Calle 90 #12-34,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-008,Cardiac Evaluation,300000,VidaPlus,70,90000.0
+APT-1066,2024-01-26,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-003,X-Ray,250000,VidaPlus,70,75000.0
+APT-1067,2024-02-08,Santiago Vega,santiago.v@mail.com,3008888888,Cra 7 #45-12,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-004,MRI Scan,850000,ProteccionMedica,60,340000.0
+APT-1068,2024-03-08,Luis Martinez,luis.m@mail.com,3002222222,Cra 15 #40-12,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-008,Cardiac Evaluation,300000,ProteccionMedica,60,120000.0
+APT-1069,2024-04-13,Jorge Ramirez,jorge.r@mail.com,3004444444,Calle 8 #14-77,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-002,Specialist Consultation,180000,SinSeguro,0,180000.0
+APT-1070,2024-02-22,Santiago Vega,santiago.v@mail.com,3008888888,Cra 7 #45-12,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-001,General Consultation,120000,SinSeguro,0,120000.0
+APT-1071,2024-04-07,Laura Medina,laura.m@mail.com,3007777777,Calle 50 #10-11,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-006,Physical Therapy Session,150000,VidaPlus,70,45000.0
+APT-1072,2024-03-04,Camila Rojas,camila.r@mail.com,3003333333,Av 5 #33-21,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-004,MRI Scan,850000,VidaPlus,70,255000.0
+APT-1073,2024-01-05,Jorge Ramirez,jorge.r@mail.com,3004444444,Calle 8 #14-77,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-002,Specialist Consultation,180000,SinSeguro,0,180000.0
+APT-1074,2024-04-28,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-007,Skin Treatment,200000,ProteccionMedica,60,80000.0
+APT-1075,2024-03-11,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-004,MRI Scan,850000,SinSeguro,0,850000.0
+APT-1076,2024-03-30,Valeria Gomez,valeria.g@mail.com,3005555555,Cra 12 #45-67,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-005,Blood Test,90000,SaludTotal,80,18000.0
+APT-1077,2024-02-06,Daniel Castro,daniel.c@mail.com,3006666666,Av 3 #22-44,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-001,General Consultation,120000,ProteccionMedica,60,48000.0
+APT-1078,2024-04-10,Camila Rojas,camila.r@mail.com,3003333333,Av 5 #33-21,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-004,MRI Scan,850000,SinSeguro,0,850000.0
+APT-1079,2024-01-29,Paula Herrera,paula.h@mail.com,3009999999,Av 68 #23-45,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-007,Skin Treatment,200000,VidaPlus,70,60000.0
+APT-1080,2024-02-19,Luis Martinez,luis.m@mail.com,3002222222,Cra 15 #40-12,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-001,General Consultation,120000,ProteccionMedica,60,48000.0
+APT-1081,2024-01-18,Santiago Vega,santiago.v@mail.com,3008888888,Cra 7 #45-12,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-003,X-Ray,250000,SaludTotal,80,50000.0
+APT-1082,2024-02-28,Daniel Castro,daniel.c@mail.com,3006666666,Av 3 #22-44,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-001,General Consultation,120000,SinSeguro,0,120000.0
+APT-1083,2024-03-07,Daniel Castro,daniel.c@mail.com,3006666666,Av 3 #22-44,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-006,Physical Therapy Session,150000,VidaPlus,70,45000.0
+APT-1084,2024-02-19,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-002,Specialist Consultation,180000,ProteccionMedica,60,72000.0
+APT-1085,2024-04-04,Luis Martinez,luis.m@mail.com,3002222222,Cra 15 #40-12,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-007,Skin Treatment,200000,VidaPlus,70,60000.0
+APT-1086,2024-02-23,Camila Rojas,camila.r@mail.com,3003333333,Av 5 #33-21,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-003,X-Ray,250000,SaludTotal,80,50000.0
+APT-1087,2024-01-21,Luis Martinez,luis.m@mail.com,3002222222,Cra 15 #40-12,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-001,General Consultation,120000,SaludTotal,80,24000.0
+APT-1088,2024-01-19,Jorge Ramirez,jorge.r@mail.com,3004444444,Calle 8 #14-77,Dr. Natalia Perez,n.perez@saludplus.com,Pediatrics,TRT-007,Skin Treatment,200000,VidaPlus,70,60000.0
+APT-1089,2024-03-25,Laura Medina,laura.m@mail.com,3007777777,Calle 50 #10-11,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-001,General Consultation,120000,VidaPlus,70,36000.0
+APT-1090,2024-01-15,Santiago Vega,santiago.v@mail.com,3008888888,Cra 7 #45-12,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-003,X-Ray,250000,SaludTotal,80,50000.0
+APT-1091,2024-02-15,Santiago Vega,santiago.v@mail.com,3008888888,Cra 7 #45-12,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-004,MRI Scan,850000,VidaPlus,70,255000.0
+APT-1092,2024-04-10,Laura Medina,laura.m@mail.com,3007777777,Calle 50 #10-11,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-003,X-Ray,250000,SaludTotal,80,50000.0
+APT-1093,2024-03-27,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-006,Physical Therapy Session,150000,SinSeguro,0,150000.0
+APT-1094,2024-02-14,Jorge Ramirez,jorge.r@mail.com,3004444444,Calle 8 #14-77,Dr. Carlos Ruiz,c.ruiz@saludplus.com,Cardiology,TRT-001,General Consultation,120000,SaludTotal,80,24000.0
+APT-1095,2024-01-15,Jorge Ramirez,jorge.r@mail.com,3004444444,Calle 8 #14-77,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-004,MRI Scan,850000,VidaPlus,70,255000.0
+APT-1096,2024-03-12,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-005,Blood Test,90000,SinSeguro,0,90000.0
+APT-1097,2024-03-12,Daniel Castro,daniel.c@mail.com,3006666666,Av 3 #22-44,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-003,X-Ray,250000,SinSeguro,0,250000.0
+APT-1098,2024-04-22,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Felipe Torres,f.torres@saludplus.com,Neurology,TRT-005,Blood Test,90000,ProteccionMedica,60,36000.0
+APT-1099,2024-02-10,Ana Torres,ana.torres@mail.com,3001111111,Calle 10 #20-30,Dr. Andres Silva,a.silva@saludplus.com,Orthopedics,TRT-001,General Consultation,120000,ProteccionMedica,60,48000.0
+APT-1100,2024-01-11,Laura Medina,laura.m@mail.com,3007777777,Calle 50 #10-11,Dr. Mariana Lopez,m.lopez@saludplus.com,Dermatology,TRT-006,Physical Therapy Session,150000,SinSeguro,0,150000.0
