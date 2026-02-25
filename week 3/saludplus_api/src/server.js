@@ -1,11 +1,16 @@
-import { createTables } from "./config/postgres.js";
+import { createTables } from "./config/postgres.js"; 
 //import app from "./app.js"; 
-import { env } from "./config/env.js";
+//import { env } from "./config/env.js";
+import { migrate } from "./services/migrationServices.js";
 
 try{
     console.log("Connecting to postgres...");
     await createTables();
     console.log("Connected to postgres successfully");
+    
+    console.log("Migrating data...");
+    await migrate(true);
+    console.log("Data migrated successfully");
 
     /* app.listen(env.port, () => {
         console.log(`Server running on port ${env.port}`);
