@@ -35,6 +35,39 @@ export async function migrate(clearBefore = false) {
         const insuranceNames = new Set();
         const specialtyNames = new Set();
 
+        for(const row of rows){
+            console.log(`Processing row: ${JSON.stringify(row)}`);
+            //insert patients
+            if(!patientEmails.has(row.patient_email)){               
+
+                await pool.query(`INSERT INTO patients (name, email, phone, address) 
+                    VALUES ($1, $2, $3, $4)`, 
+                    [row.patient_name, row.patient_email, row.patient_phone, row.patient_address]);
+                patientEmails.add(row.patient_email);
+            }
+
+            //insert specialitys
+            if(!specialtyNames.has(row.specialty)){
+                await pool.query(`INSERT INTO specialitys (name) 
+                    VALUES ($1)`, [row.specialty]);
+                specialtyNames.add(row.specialty);
+            }
+
+            //insert doctors
+            if(!doctorEmails.has(row.doctor_email)){   
+
+            // Obtener IDs referenciados      
+                
+                const { rows: [specialty] } = await pool.query(`SELECT id FROM specialitys WHERE name = $1`, 
+                    [row.specialty]);
+
+                await pool.query(`INSERT INTO doctors (name, email, speciality_id) 
+                    VALUES ($1, $2, $3)`, 
+                    [row.doctor_name, row.doctor_email, specialty.id]);
+                doctorEmails.add(row.doctor_email);
+            }
+        }
+
 
 
 
