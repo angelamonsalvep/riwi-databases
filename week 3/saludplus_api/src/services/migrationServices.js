@@ -3,6 +3,7 @@ import { resolve } from 'path';
 import { parse } from 'csv-parse/sync';
 import { pool } from '../config/postgres.js';
 import { env } from '../config/env.js';
+import { PatientHistory } from '../config/mongodb.js';
 
 export async function migrate(clearBefore = false) {
     try{
@@ -14,17 +15,23 @@ export async function migrate(clearBefore = false) {
             trim: true,
         });
 
-        console.log(rows);
+        //console.log(rows);
         console.log(`Read ${rows.length} rows from CSV file`);
 
         // --- Clear existing data if requested
         if(clearBefore){
+
+            // clear postgres data
             await pool.query('BEGIN');
             await pool.query(`TRUNCATE TABLE patients, 
                 treatments, insurances_providers, specialitys,
                 doctors, appointments CASCADE`);
             await pool.query('COMMIT');
             console.log(' previous data cleared successfully');
+
+            //clear mongodb data
+            await PatientHistory.deleteMany({});
+            console.log(' previous data cleared successfully from mongodb');
 
         }
 
@@ -36,7 +43,7 @@ export async function migrate(clearBefore = false) {
         const specialtyNames = new Set();
 
         for(const row of rows){
-            console.log(`Processing row: ${JSON.stringify(row)}`);
+            //console.log(`Processing row: ${JSON.stringify(row)}`);
             //insert patients
             const patientEmail = row.patient_email.toLowerCase();
             if(!patientEmails.has(patientEmail)){               
@@ -111,7 +118,49 @@ export async function migrate(clearBefore = false) {
                     VALUES ($1, $2, $3, $4, $5, $6, $7)`, 
                     [row.appointment_id, row.appointment_date, patient.id, doctor.id, 
                         row.treatment_code, insurance.id, parseInt(row.amount_paid)]);
+
+            
         }
+
+
+        // ── 5. Crear/actualizar historial en MongoDB ────────────────────────────────
+    // Agrupamos las citas por paciente para construir el documento a incrustar
+    const historiesByEmail = {};
+
+    for (const row of rows) {
+        const email = row.patient_email.toLowerCase().trim();
+
+        if (!historiesByEmail[email]) {
+            historiesByEmail[email] = {
+                patientEmail: email,
+                patientName: row.patient_name,
+                appointments: [],
+            };
+        }
+
+        historiesByEmail[email].appointments.push({
+            appointmentId: row.appointment_id,
+            date: row.appointment_date,
+            doctorName: row.doctor_name,
+            doctorEmail: row.doctor_email.toLowerCase().trim(),
+            specialty: row.specialty,
+            treatmentCode: row.treatment_code,
+            treatmentDescription: row.treatment_description,
+            treatmentCost: parseFloat(row.treatment_cost),
+            insuranceProvider: row.insurance_provider,
+            coveragePercentage: parseInt(row.coverage_percentage, 10),
+            amountPaid: parseFloat(row.amount_paid),
+        });
+    }
+
+    // upsert: actualiza si ya existe, crea si no existe
+    for (const history of Object.values(historiesByEmail)) {
+        await PatientHistory.updateOne(
+            { patientEmail: history.patientEmail },
+            { $set: history },
+            { upsert: true }
+        );
+    }
 
     }catch(error){
         console.error("Error migrating data:", error);

@@ -36,7 +36,7 @@ export const PatientHistory =
 
 export async function connectMongo(){
     try{
-        await mongoose.connect(env.databaseMongoUrl);
+        await mongoose.connect(env.mongoUri);
         console.log("Connected to MongoDB");
     } catch (error) {
         console.error("Error connecting to MongoDB:", error);
