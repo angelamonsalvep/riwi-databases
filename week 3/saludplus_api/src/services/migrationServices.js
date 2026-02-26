@@ -38,12 +38,13 @@ export async function migrate(clearBefore = false) {
         for(const row of rows){
             console.log(`Processing row: ${JSON.stringify(row)}`);
             //insert patients
-            if(!patientEmails.has(row.patient_email)){               
+            const patientEmail = row.patient_email.toLowerCase();
+            if(!patientEmails.has(patientEmail)){               
 
                 await pool.query(`INSERT INTO patients (name, email, phone, address) 
                     VALUES ($1, $2, $3, $4)`, 
                     [row.patient_name, row.patient_email, row.patient_phone, row.patient_address]);
-                patientEmails.add(row.patient_email);
+                patientEmails.add(patientEmail);
             }
 
             //insert specialitys
@@ -58,7 +59,8 @@ export async function migrate(clearBefore = false) {
 
             // Obtener IDs referenciados      
                 
-                const { rows: [specialty] } = await pool.query(`SELECT id FROM specialitys WHERE name = $1`, 
+                const { rows: [specialty] } = await pool.query(`SELECT id FROM 
+                    specialitys WHERE name = $1`, 
                     [row.specialty]);
 
                 await pool.query(`INSERT INTO doctors (name, email, speciality_id) 
@@ -66,10 +68,50 @@ export async function migrate(clearBefore = false) {
                     [row.doctor_name, row.doctor_email, specialty.id]);
                 doctorEmails.add(row.doctor_email);
             }
+
+            //insert treatments
+            
+            if(!treatmentCodes.has(row.treatment_code)){ 
+
+                await pool.query(`INSERT INTO treatments (code, description, cost) 
+                    VALUES ($1, $2, $3)`, 
+                    [row.treatment_code, row.treatment_description, parseInt(row.treatment_cost)]);
+                treatmentCodes.add(row.treatment_code);
+            }
+
+            //insert insurance providers
+            
+            if(!insuranceNames.has(row.insurance_provider)){ 
+
+                await pool.query(`INSERT INTO insurances_providers 
+                    (name, coverage_percentage) 
+                    VALUES ($1, $2)`, 
+                    [row.insurance_provider, 
+                        parseInt(row.coverage_percentage)]);
+                insuranceNames.add(row.insurance_provider);
+            }
+
+            //insert appointments
+            // Obtener IDs referenciados      
+                
+                const { rows: [patient] } = await pool.query(`SELECT id FROM 
+                    patients WHERE email = $1`, 
+                    [row.patient_email]);
+
+                const { rows: [doctor] } = await pool.query(`SELECT id FROM 
+                    doctors WHERE email = $1`, 
+                    [row.doctor_email]);
+
+                const { rows: [insurance] } = await pool.query(`SELECT id FROM 
+                    insurances_providers WHERE name = $1`, 
+                    [row.insurance_provider]);
+
+                await pool.query(`INSERT INTO appointments (id, date, patient_id, 
+                    doctor_id, treatment_code, insurance_provider_id, amount_paid) 
+                    VALUES ($1, $2, $3, $4, $5, $6, $7)`, 
+                    [row.appointment_id, row.appointment_date, patient.id, doctor.id, 
+                        row.treatment_code, insurance.id, parseInt(row.amount_paid)]);
         }
-
-
-
 
     }catch(error){
         console.error("Error migrating data:", error);
