@@ -14,7 +14,7 @@ try{
     console.log("Connected to mongodb successfully");
     
     console.log("Migrating data...");
-    await migrate(true);
+    await migrate(false);
     console.log("Data migrated successfully");
 
     /* app.listen(env.port, () => {

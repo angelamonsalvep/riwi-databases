@@ -49,7 +49,8 @@ export async function migrate(clearBefore = false) {
             if(!patientEmails.has(patientEmail)){               
 
                 await pool.query(`INSERT INTO patients (name, email, phone, address) 
-                    VALUES ($1, $2, $3, $4)`, 
+                    VALUES ($1, $2, $3, $4)
+                    ON CONFLICT (email) DO NOTHING`, 
                     [row.patient_name, row.patient_email, row.patient_phone, row.patient_address]);
                 patientEmails.add(patientEmail);
             }
@@ -57,7 +58,8 @@ export async function migrate(clearBefore = false) {
             //insert specialitys
             if(!specialtyNames.has(row.specialty)){
                 await pool.query(`INSERT INTO specialitys (name) 
-                    VALUES ($1)`, [row.specialty]);
+                    VALUES ($1)
+                    ON CONFLICT (name) DO NOTHING`, [row.specialty]);
                 specialtyNames.add(row.specialty);
             }
 
@@ -71,7 +73,8 @@ export async function migrate(clearBefore = false) {
                     [row.specialty]);
 
                 await pool.query(`INSERT INTO doctors (name, email, speciality_id) 
-                    VALUES ($1, $2, $3)`, 
+                    VALUES ($1, $2, $3)
+                    ON CONFLICT (email) DO NOTHING`, 
                     [row.doctor_name, row.doctor_email, specialty.id]);
                 doctorEmails.add(row.doctor_email);
             }
@@ -81,7 +84,8 @@ export async function migrate(clearBefore = false) {
             if(!treatmentCodes.has(row.treatment_code)){ 
 
                 await pool.query(`INSERT INTO treatments (code, description, cost) 
-                    VALUES ($1, $2, $3)`, 
+                    VALUES ($1, $2, $3)
+                    ON CONFLICT (code) DO NOTHING`, 
                     [row.treatment_code, row.treatment_description, parseInt(row.treatment_cost)]);
                 treatmentCodes.add(row.treatment_code);
             }
@@ -92,7 +96,8 @@ export async function migrate(clearBefore = false) {
 
                 await pool.query(`INSERT INTO insurances_providers 
                     (name, coverage_percentage) 
-                    VALUES ($1, $2)`, 
+                    VALUES ($1, $2)
+                    ON CONFLICT (name) DO NOTHING`, 
                     [row.insurance_provider, 
                         parseInt(row.coverage_percentage)]);
                 insuranceNames.add(row.insurance_provider);
@@ -115,7 +120,8 @@ export async function migrate(clearBefore = false) {
 
                 await pool.query(`INSERT INTO appointments (id, date, patient_id, 
                     doctor_id, treatment_code, insurance_provider_id, amount_paid) 
-                    VALUES ($1, $2, $3, $4, $5, $6, $7)`, 
+                    VALUES ($1, $2, $3, $4, $5, $6, $7)
+                    ON CONFLICT (id) DO NOTHING`, 
                     [row.appointment_id, row.appointment_date, patient.id, doctor.id, 
                         row.treatment_code, insurance.id, parseInt(row.amount_paid)]);
 
@@ -153,14 +159,37 @@ export async function migrate(clearBefore = false) {
         });
     }
 
+    const historiesArray = Object.values(historiesByEmail);
+
+    //console.log(`Processing data:`, JSON.stringify(historiesArray, null, 2));
+    
     // upsert: actualiza si ya existe, crea si no existe
     for (const history of Object.values(historiesByEmail)) {
+        //console.log(`Upserting history for patient:`, JSON.stringify(history, null, 2));
         await PatientHistory.updateOne(
             { patientEmail: history.patientEmail },
             { $set: history },
             { upsert: true }
         );
     }
+
+    // ── 6. Retornar estadísticas ────────────────────────────────────────────────
+    const { rows: [{ count: pCount }] } = await pool.query('SELECT COUNT(*) FROM patients');
+    console.log(`Total patients in PostgreSQL: ${pCount}`);
+    const { rows: [{ count: dCount }] } = await pool.query('SELECT COUNT(*) FROM doctors');
+    const { rows: [{ count: iCount }] } = await pool.query('SELECT COUNT(*) FROM insurances_providers');
+    const { rows: [{ count: aCount }] } = await pool.query('SELECT COUNT(*) FROM appointments');
+    const hCount = await PatientHistory.countDocuments();
+
+    return {
+        patients: parseInt(pCount),
+        doctors: parseInt(dCount),
+        insurances: parseInt(iCount),
+        appointments: parseInt(aCount),
+        histories: hCount,
+        csvPath: csvPath,
+    };
+
 
     }catch(error){
         console.error("Error migrating data:", error);
